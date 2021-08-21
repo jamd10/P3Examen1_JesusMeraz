@@ -188,19 +188,19 @@ void Red::ping(string ipComparar, int num){
 			binario1 = ipComparar.substr(0, i);
 		}
 	}
-	for (int i = binario1; i < ipComparar.size(); i++){
+	for (int i = binario1.size(); i < ipComparar.size(); i++){
 		while(arreglo[i]!="."){
-			binario2 = ipComparar.substr(binario1, i);
+			binario2 = ipComparar.substr(binario1.size(), i);
 		}
 	}
-	for (int i = binario2; i < ipComparar.size(); i++){
+	for (int i = binario2.size(); i < ipComparar.size(); i++){
 		while(arreglo[i]!="."){
-			binario3 = ipComparar.substr(binario2, i);
+			binario3 = ipComparar.substr(binario2.size(), i);
 		}
 	}
-	for (int i = binario3; i < ipComparar.size(); i++){
+	for (int i = binario3.size(); i < ipComparar.size(); i++){
 		while(arreglo[i]!="."){
-			binario4 = ipComparar.substr(binario3, i);
+			binario4 = ipComparar.substr(binario3.size(), i);
 		}
 	}
 	int ip1_, ip2_, ip3_, ip4_;
@@ -257,19 +257,19 @@ void Red::ping(string ipComparar, int num){
 			binario1 = ListaPC[i]->getIp().substr(0, i);
 		}
 	}
-	for (int i = binario1; i < ipComparar.size(); i++){
+	for (int i = binario1.size(); i < ListaPC.size(); i++){
 		while(arreglo[i]!="."){
-			binario2 = ListaPC[i]->getIp().substr(binario1, i);
+			binario2 = ListaPC[i]->getIp().substr(binario1.size(), i);
 		}
 	}
-	for (int i = binario2; i < ipComparar.size(); i++){
+	for (int i = binario2.size(); i < ListaPC.size(); i++){
 		while(arreglo[i]!="."){
-			binario3 = ListaPC[i]->getIp().substr(binario2, i);
+			binario3 = ListaPC[i]->getIp().substr(binario2.size(), i);
 		}
 	}
-	for (int i = binario3; i < ipComparar.size(); i++){
+	for (int i = binario3.size(); i < ipComparar.size(); i++){
 		while(arreglo[i]!="."){
-			binario4 = ListaPC[i]->getIp().substr(binario3, i);
+			binario4 = ListaPC[i]->getIp().substr(binario3.size(), i);
 		}
 	}
 	int ip1_, ip2_, ip3_, ip4_;
@@ -350,13 +350,6 @@ void Red::ping(string ipComparar, int num){
 		}
 	}
 	// final
-	
-	delete[] arreglo;
-	delete[] ipObtenida1;
-	delete[] ipObtenida2;
-	delete[] ipObtenida3;
-	delete[] ipObtenida4;
-
 }
 void Red::imprimir(){
 	for(int i = 0; i < ListaPC.size(); i++){
